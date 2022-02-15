@@ -9,8 +9,7 @@ pipeline {
         disableConcurrentBuilds()
     }
     tools {
-        maven 'Maven 3'
-        jdk 'open-jdk8'
+        maven 'Maven_3'
     }
     stages {
         stage ('Checkout') {
@@ -20,7 +19,7 @@ pipeline {
         }
         stage('Run integration tests') {
             steps {
-                sh "mvn clean test"
+                bat "mvn clean test"
             }
         }
     }
