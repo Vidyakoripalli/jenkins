@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-        cron('@hourly')
+        cron('@monday')
         pollSCM('* * * * *')
     }
     options {
