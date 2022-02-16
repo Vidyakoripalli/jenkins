@@ -22,6 +22,13 @@ pipeline {
                 bat "mvn clean test"
             }
         }
+        stage('code quality'){
+    steps {
+    withSonarQubeEnv('sonarqube'){
+    bat 'mvn sonar:sonar'
+}
+}
+}
     }
     post {
         always {
